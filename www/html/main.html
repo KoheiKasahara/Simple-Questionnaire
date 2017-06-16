@@ -1,0 +1,40 @@
+<ons-page>
+    <!-- ヘッダ -->
+    <ons-toolbar>
+      <div class="center">Simple Questionnaire</div>
+    </ons-toolbar>
+    
+    <!-- ボタン -->
+    <div style="text-align:center;">
+        <ons-button ng-click="click()" style="width:70%;text-align:center;margin:20px 0;">挙手！</ons-button>
+        <ons-button ng-click="cancel()" style="width:70%;text-align:center;margin:0 0 20px 0;" modifier="quiet">ログリセット</ons-button>
+    </div>
+    
+    <!-- ログリスト -->
+    <ons-list style="background-color:ivory;">
+    
+        <!-- リストヘッダ -->
+        <ons-list-header style="background-color:oldlace;">
+            <label>
+                ログ
+            </label>
+        </ons-list-header>
+        
+        <!-- リスト明細 -->
+        <div style="overflow-y: auto; height:300px;" id="logList">
+            <ons-list-item ng-repeat="data in dataList">
+                <label>
+                    {{$index+1}}
+                </label>
+                <label>
+                    投稿時間：{{data.time}}
+                </label>
+                <br />
+                <label>
+                    デバイスID：{{data.deviceId}}
+                </label>
+            </ons-list-item>
+        </div>
+    </ons-list>
+    
+</ons-page>
